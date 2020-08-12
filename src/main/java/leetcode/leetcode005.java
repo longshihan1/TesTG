@@ -34,7 +34,6 @@ public class leetcode005 {
                     }
                 }
 
-                // 只要 dp[i][j] == true 成立，就表示子串 s[i..j] 是回文，此时记录回文长度和起始位置
                 if (dp[i][j] && j - i + 1 > maxLen) {
                     maxLen = j - i + 1;
                     begin = i;
