@@ -11,10 +11,9 @@ public class leetcode005 {
             return "";
         }
         int start=0,end=0;
-        for (int i = 0; i <2*n-1; i++) {
-            int left=i/2;
+        boolean[][] dp=new boolean[n][n];
+        String result="";
 
-        }
         return "";
     }
 
