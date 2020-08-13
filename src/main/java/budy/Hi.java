@@ -11,7 +11,7 @@ import java.lang.reflect.Modifier;
 
 public class Hi {
     public static void main(String[] args) {
-        System.out.println("Byte-buddy Hi HelloWorld By 小傅哥(bugstack.cn)");
+        System.out.println("Byte-buddy Hi HelloWorld By (bugstack.cn)");
 
         DynamicType.Unloaded<?> dynamicType = new ByteBuddy() .subclass(Object.class)
                 .name("thread.HelloWorld")

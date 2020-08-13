@@ -16,7 +16,7 @@ public class leetcode003 {
         for (int i = 0; i < s.length(); i++){
             set.add(s.charAt(i));
         }
-        // to遍历直到字符串末尾
+
         while (to < s.length()){
             int site = s.substring(from, to).indexOf(s.charAt(to));
             if (site != -1){
@@ -31,7 +31,6 @@ public class leetcode003 {
             }
             to++;
         }
-        // 处理最后一个子串
         if (to - from > maxLength) {
             maxLength = to - from;
         }

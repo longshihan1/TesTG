@@ -25,27 +25,27 @@ public class TRYClassAdapter extends ClassVisitor {
                     target = new Label();
             @Override
             protected void onMethodEnter() {
-                //标志：try块开始位置
+                //标志：try块开始位
                 visitLabel(from);
                 visitTryCatchBlock(from, to, target, "java/lang/Exception");
             }
-            // 访问局部变量和操作数栈
+            // 访问部变量和操作数栈
             @Override
             public void visitMaxs(int maxStack, int maxLocals) {
-                //标志：try块结束
+                //标志：try块结
                 mv.visitLabel(to);
-                //标志：catch块开始位置
+                //标志：catch块开始位
                 mv.visitLabel(target);
 
 
-                // 异常信息保存到局部变量
+                // 异常信息保存到局部变
                 int local = newLocal(Type.LONG_TYPE);
                 mv.visitVarInsn(ASTORE, local);
                 mv.visitFrame(Opcodes.F_SAME1, 0, null, 1, new Object[]{"java/lang/Exception"});
 
 //
 //                // 输出信息
-//                mv.visitLdcInsn(  "." + name);  // 类名.方法名
+//                mv.visitLdcInsn(  "." + name);  // 类名.方法
 //                mv.visitVarInsn(ALOAD, local);
 //                mv.visitMethodInsn(INVOKESTATIC, Type.getInternalName(MethodTest.class), "point", "(Ljava/lang/String;Ljava/lang/Throwable;)V", false);
 
@@ -55,16 +55,15 @@ public class TRYClassAdapter extends ClassVisitor {
                 super.visitMaxs(maxStack, maxLocals);
             }
 
-            // 方法退出时修改字节码
             @Override
             protected void onMethodExit(int opcode) {
                 if ((IRETURN <= opcode && opcode <= RETURN) || opcode == ATHROW) {
                     int nextLocal = this.nextLocal;
-                    mv.visitVarInsn(ASTORE, nextLocal);// 将栈顶引用类型值保存到局部变量 indexbyte中。
-                    mv.visitVarInsn(ALOAD, nextLocal); // 从局部变量indexbyte中装载引用类型 值入栈。
+                    mv.visitVarInsn(ASTORE, nextLocal);
+                    mv.visitVarInsn(ALOAD, nextLocal);
 
 //
-//                    mv.visitLdcInsn(className + "." + name);  // 类名.方法名
+//                    mv.visitLdcInsn(className + "." + name);
 //                    mv.visitVarInsn(ALOAD, nextLocal);
 //                    mv.visitMethodInsn(INVOKESTATIC, Type.getInternalName(MethodTest.class), "point", "(Ljava/lang/String;Ljava/lang/Object;)V", false);
 
