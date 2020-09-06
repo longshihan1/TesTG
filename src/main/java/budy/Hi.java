@@ -30,6 +30,7 @@ public class Hi {
     public static void save(byte[] data,String name) throws Exception{
         File file = new File(
                 System.getProperty("user.dir") + "//build//classes//java//main//thread//"+name+".class");
+
         System.out.println(file.getPath());
         FileOutputStream fout = new FileOutputStream(file);
         fout.write(data);
