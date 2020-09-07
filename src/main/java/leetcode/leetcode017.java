@@ -6,50 +6,36 @@ import java.util.List;
 
 public class leetcode017 {
     public static void main(String[] args) {
-
+        System.out.println("  " + letterCombinations("234"));
     }
 
-    public List<String> letterCombinations(String digits) {
-        List<String> list=new ArrayList<>();
+    public static List<String> letterCombinations(String digits) {
+        List<String> strings = new ArrayList<>();
+        if (digits.length() == 0) {
+            return strings;
+        }
+        String[] dict = {"abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        //选中的字母组合
+        String[] arr = new String[digits.length()];
         for (int i = 0; i < digits.length(); i++) {
-            List<String> strings=char2String(digits.charAt(i));
-
+            arr[i] = dict[digits.charAt(i) - '0' - 2];
         }
-        return list;
+        int startStr = 0;//循环下标
+        group(arr, startStr, "", strings);
+        return strings;
     }
 
-    private static List<String> char2String(char c) {
-        List<String> characters = null;
-        switch (c) {
-            case '1':
-                characters = Arrays.asList("");
-                break;
-            case '2':
-                characters = Arrays.asList("a", "b", "c");
-                break;
-            case '3':
-                characters = Arrays.asList("d", "e", "f");
-                break;
-            case '4':
-                characters = Arrays.asList("g", "h", "i");
-                break;
-            case '5':
-                characters = Arrays.asList("j", "k", "l");
-                break;
-            case '6':
-                characters = Arrays.asList("m", "n", "o");
-                break;
-            case '7':
-                characters = Arrays.asList("p", "q", "r", "s");
-                break;
-            case '8':
-                characters = Arrays.asList("t", "u", "v");
-                break;
-            case '9':
-                characters = Arrays.asList("w", "x", "y", "z");
-                break;
+    private static String group(String[] arr, int startStr, String str, List<String> strings) {
+        char[] chars1 = arr[startStr].toCharArray();
+        for (int j = 0; j < chars1.length; j++) {
+            if (startStr == arr.length - 1) {
+                strings.add(str + chars1[j]);
+            } else {
+                //startStr+1:遍历下一个字符组合;str + chars1[j]:拼接当前遍历的字符
+                group(arr, startStr + 1, str + chars1[j], strings);
+            }
         }
-        return characters;
+        return str;
     }
 
 }
