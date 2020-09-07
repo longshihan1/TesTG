@@ -10,9 +10,9 @@ public class Tingdan {
     }
 
     public static void pullTask(){
-        long requsetId=20000000087799546l;
-        int id=344;
-        for (int i = 0; i <5; i++) {
+        long requsetId=20000000087799647l;
+        int id=355;
+        for (int i = 0; i <1; i++) {
             try {
                 Thread.sleep(1000);
             }catch (Exception e){
@@ -31,10 +31,10 @@ public class Tingdan {
                     "    \"userType\":2,\n" +
                     "    \"invalidTime\":1699232556,\n" +
                     "    \"title\":\"标题123\",\n" +
-                    "    \"msgContent\":\"{\\\"id\\\":"+id+",\\\"content\\\":[\\\"投诉原因：不送货上门\\\",\\\"罚款金额：" +
+                    "    \"msgContent\":\"{\\\"id\\\":"+id+",\\\"content\\\":[\\\"投诉：不送货上门\\\",\\\"罚款金额：" +
                     "X元cdcddccdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcddcdcdcdcdcdcdcdcdcdcd\\\",\\\"投诉时间：X月X日\\\"]," +
                     "\\\"desc\\\":\\\"请务必送货上门，送货上楼。\\\",\\\"title\\\":\\\"您有1条投诉，请注意！\\\"" +
-                    ",\\\"pushTitle\\\":\\\""+requsetId+"你在X月X日因客户投诉罚款Y元\\\"}\",\n" +
+                    ",\\\"pushTitle\\\":\\\""+requsetId+"你在X月X日因客户投诉罚款Y元\\\",\\\"orderid\\\":123}\",\n" +
                     "    \"summary\":287642876427\n" +
                     "}\n" +
                     "    ]\n" +
@@ -54,22 +54,11 @@ public class Tingdan {
                 public void onFailure(Call call, IOException e) {
                     System.out.println("  "+e.getMessage());
                 }
-
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
-//                    Log.d(TAG, response.protocol() + " " +response.code() + " " + response.message());
-                    Headers headers = response.headers();
-                    for (int i = 0; i < headers.size(); i++) {
-//                        Log.d(TAG, headers.name(i) + ":" + headers.value(i));
-                    }
                     System.out.println(finalRequsetId +":"+ finalId +" : "+response.body().string());
-//                    Log.d(TAG, "onResponse: " + response.body().string());
                 }
             });
-
-
-
-
         }
     }
 }
