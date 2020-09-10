@@ -10,9 +10,9 @@ public class Tingdan {
     }
 
     public static void pullTask(){
-        long requsetId=20000000087799647l;
-        int id=355;
-        for (int i = 0; i <1; i++) {
+        long requsetId=20000000027799488l;
+        int id=20;
+        for (int i = 0; i <5; i++) {
             try {
                 Thread.sleep(1000);
             }catch (Exception e){
