@@ -1,5 +1,7 @@
 package util;
 
+import java.util.concurrent.Executor;
+
 public class DAN {
 
     //懒汉式
@@ -36,6 +38,7 @@ public class DAN {
         static SingleTon2 instance = new SingleTon2();
 
         private SingleTon2() {
+
         }
 
         public static SingleTon2 getInstance() {
@@ -46,7 +49,6 @@ public class DAN {
     //dcl
     static class SingleTon3 {
         volatile static SingleTon3 instance;
-
         private SingleTon3() {
 
         }

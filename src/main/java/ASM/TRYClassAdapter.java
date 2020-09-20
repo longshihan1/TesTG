@@ -47,7 +47,7 @@ public class TRYClassAdapter extends ClassVisitor {
 //                // 输出信息
 //                mv.visitLdcInsn(  "." + name);  // 类名.方法
 //                mv.visitVarInsn(ALOAD, local);
-//                mv.visitMethodInsn(INVOKESTATIC, Type.getInternalName(MethodTest.class), "point", "(Ljava/lang/String;Ljava/lang/Throwable;)V", false);
+//                mv.visitMethodInsn(INVOKESTATIC, Type.getInternalName(Methodclass), "point", "(Ljava/lang/String;Ljava/lang/Throwable;)V", false);
 
                 // 抛出异常
                 mv.visitVarInsn(ALOAD, local);
@@ -65,7 +65,7 @@ public class TRYClassAdapter extends ClassVisitor {
 //
 //                    mv.visitLdcInsn(className + "." + name);
 //                    mv.visitVarInsn(ALOAD, nextLocal);
-//                    mv.visitMethodInsn(INVOKESTATIC, Type.getInternalName(MethodTest.class), "point", "(Ljava/lang/String;Ljava/lang/Object;)V", false);
+//                    mv.visitMethodInsn(INVOKESTATIC, Type.getInternalName(Methodclass), "point", "(Ljava/lang/String;Ljava/lang/Object;)V", false);
 
                 }
             }

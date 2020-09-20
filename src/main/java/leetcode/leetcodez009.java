@@ -24,10 +24,10 @@ public class leetcodez009 {
         second.leftNode=four;
         three.rightNode=seven;
         three.leftNode=six;
-        System.out.print("广度优先遍历结果：");
+        System.out.print("广度优先遍历结果");
         new leetcodez009().BroadFirstSearch(head);
         System.out.println();
-        System.out.print("深度优先遍历结果：");
+        System.out.print("深度优先遍历结果");
         new leetcodez009().depthFirstSearch(head);
     }
 
@@ -42,7 +42,7 @@ public class leetcodez009 {
             TreeNode node=myQueue.poll();
             System.out.print(node.data+" ");
             if(null!=node.leftNode) {
-                myQueue.add(node.leftNode);    //深度优先遍历，我们在这里采用每一行从左到右遍历
+                myQueue.add(node.leftNode);    //深度优先遍历，我们在这里采用每一行从左到右遍
             }
             if(null!=node.rightNode) {
                 myQueue.add(node.rightNode);
@@ -62,7 +62,7 @@ public class leetcodez009 {
             TreeNode node=myStack.pop();    //弹出栈顶元素
             System.out.print(node.data+" ");
             if(node.rightNode!=null) {
-                myStack.push(node.rightNode);    //深度优先遍历，先遍历左边，后遍历右边,栈先进后出
+                myStack.push(node.rightNode);    //深度优先遍历，先遍历左边，后遍历右边,栈先进后
             }
             if(node.leftNode!=null) {
                 myStack.push(node.leftNode);

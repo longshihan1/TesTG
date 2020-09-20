@@ -1,7 +1,4 @@
-package leetcode;
-
-import java.util.ArrayList;
-import java.util.Arrays;
+﻿import java.util.ArrayList;
 import java.util.List;
 
 public class leetcode017 {
@@ -15,7 +12,7 @@ public class leetcode017 {
             return strings;
         }
         String[] dict = {"abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
-        //选中的字母组合
+        //选中的字母组
         String[] arr = new String[digits.length()];
         for (int i = 0; i < digits.length(); i++) {
             arr[i] = dict[digits.charAt(i) - '0' - 2];
@@ -31,7 +28,7 @@ public class leetcode017 {
             if (startStr == arr.length - 1) {
                 strings.add(str + chars1[j]);
             } else {
-                //startStr+1:遍历下一个字符组合;str + chars1[j]:拼接当前遍历的字符
+                //startStr+1:遍历下一个字符组;str + chars1[j]:拼接当前遍历的字
                 group(arr, startStr + 1, str + chars1[j], strings);
             }
         }

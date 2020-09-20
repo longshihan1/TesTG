@@ -11,11 +11,11 @@ public class leetcodez015 {
     }
 
     /**
-     * 功能概要：
+     * 功能概要
      */
     public static class TreeNode {
         public Integer data;
-        /*该节点的父节点*/
+        /*该节点的父节*/
         public TreeNode parent;
         /*该节点的左子节点*/
         public TreeNode left;
@@ -34,14 +34,14 @@ public class leetcodez015 {
 
 
     /**
-     * 功能概要：排序/平衡二叉树
+     * 功能概要：排/平衡二叉
      */
     public static class SearchTree {
         public TreeNode root;
         public long size;
 
         /**
-         * 往树中加节点
+         *树中加节
          *
          * @param data
          * @return Boolean 插入成功返回true
